@@ -181,11 +181,11 @@ function Home() {
 
 
   const advantages = [
-    { icon: <PsychologyIcon sx={{ fontSize: 32 }} />, title: 'Adapté à votre niveau', description: 'Débutant, intermédiaire ou expert : l’interface s’adapte à vous' },
+    { icon: <PsychologyIcon sx={{ fontSize: 32 }} />, title: 'Adapté à votre niveau', description: 'Débutant, intermédiaire ou expert : l’interface s’adapte à votre expérience' },
     { icon: <AutoGraphIcon sx={{ fontSize: 32 }} />, title: 'Visualisations intelligentes', description: 'Des graphiques dynamiques qui rendent les données techniques compréhensibles.' },
-    { icon: <SpeedIcon sx={{ fontSize: 32 }} />, title: 'Décision éclairée', description: 'Tous les critères essentiels pour choisir en toute connaissance de cause.' },
-    { icon: <VisibilityIcon sx={{ fontSize: 32 }} />, title: 'Comparaison transparente', description: 'Comparez jusqu’à 4 véhicules côte à côte avec un code couleur unique.' },
-    { icon: <SecurityIcon sx={{ fontSize: 32 }} />, title: 'Données fiables', description: 'Informations provenant de sources officielles et de tests certifiés.' }
+    { icon: <SpeedIcon sx={{ fontSize: 32 }} />, title: 'Décision éclairée', description: 'Tous les critères essentiels pour faire un choix réflechie' },
+    { icon: <VisibilityIcon sx={{ fontSize: 32 }} />, title: 'Comparaison transparente', description: 'Comparer jusqu’à 4 véhicules chacun étant associé un code couleur unique.' },
+    { icon: <SecurityIcon sx={{ fontSize: 32 }} />, title: 'Données fiables', description: 'Des informations viennent de sources officielles et de tests certifiés.' }
   ];
 
   const stats = [
@@ -214,7 +214,7 @@ function Home() {
 
         <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
           <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
+            <Grid size={{xs: 12, md: 6}}>
               <HeroTitle>Comparez intelligemment,<br />choisissez en confiance</HeroTitle>
               <HeroSubtitle>
                 La première plateforme qui adapte la comparaison automobile à votre niveau d'expertise.
@@ -229,6 +229,24 @@ function Home() {
         <ScrollArrow><ArrowCircleDownIcon sx={{ fontSize: 48 }} /></ScrollArrow>
       </HeroSection>
 
+      {/* ----------------------------- ADVANTAGES ----------------------------- */}
+        <Typography variant="h2" align="center" sx={{ fontSize: '40px', fontWeight: 800, mb: 6 , mt: 8}}>
+          Pourquoi choisir ComparAuto ?
+        </Typography>
+      <Container maxWidth="xl" sx={{ mb: 8 }}>
+        <Grid container spacing={3} justifyContent="center" sx={{ mt: 4 }}>
+          {advantages.slice(0, 5).map((adv, index) => (
+            <Grid size={{xs: 12, md: 4}} key={index}>
+              <AdvantageCard>
+                <IconWrapper>{adv.icon}</IconWrapper>
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>{adv.title}</Typography>
+                <Typography sx={{ color: colors.textSecondary }}>{adv.description}</Typography>
+              </AdvantageCard>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+
       {/* ----------------------------- STATS ----------------------------- */}
       <Typography variant="h2" align="center" sx={{ fontSize: '40px', fontWeight: 800, mb: 4 }}>
             Nos statistiques
@@ -236,7 +254,7 @@ function Home() {
       <Container maxWidth="xl" sx={{ mb: 8 }} ref={statsRef}>
         <Grid container spacing={2} justifyContent="center">
           {stats.map((stat, index) => (
-            <Grid item xs={6} md={3} key={index}>
+            <Grid size={{xs: 6, md: 3}} key={index}>
               <StatBox>
                 <Typography variant="h3" sx={{ color: colors.primary, fontWeight: 700 }}>
                     {statsVisible ? <AnimatedNumber value={stat.value} /> : "0"}
@@ -248,41 +266,7 @@ function Home() {
             </Grid>
           ))}
         </Grid>
-      </Container>
-
-      {/* ----------------------------- ADVANTAGES ----------------------------- */}
-
-      <Container maxWidth="xl" sx={{ mb: 8 }}>
-        <Typography variant="h2" align="center" sx={{ fontSize: '40px', fontWeight: 800, mb: 2 }}>
-          Pourquoi choisir ComparAuto ?
-        </Typography>
-
-        {/* Ligne 1 : 3 éléments 
-        <Grid container spacing={3} justifyContent="center">
-          {advantages.slice(0, 3).map((adv, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <AdvantageCard>
-                <IconWrapper>{adv.icon}</IconWrapper>
-                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>{adv.title}</Typography>
-                <Typography sx={{ color: colors.textSecondary }}>{adv.description}</Typography>
-              </AdvantageCard>
-            </Grid>
-          ))}
-        </Grid>*/}
-
-        {/* Ligne 2 : 2 éléments centrés */}
-        <Grid container spacing={3} justifyContent="center" sx={{ mt: 2 }}>
-          {advantages.slice(0, 5).map((adv, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <AdvantageCard>
-                <IconWrapper>{adv.icon}</IconWrapper>
-                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>{adv.title}</Typography>
-                <Typography sx={{ color: colors.textSecondary }}>{adv.description}</Typography>
-              </AdvantageCard>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+      </Container>      
 
       {/* ----------------------------- FAQ ----------------------------- */}
       <Typography variant="h2" align="center" sx={{ fontSize: '40px', fontWeight: 800, mb: 4 }}>

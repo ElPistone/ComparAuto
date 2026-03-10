@@ -6,8 +6,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home/Home';
-//import Catalogue from './pages/Catalogue/Catalogue'; // À créer
-//import Comparison from './pages/Comparison/Comparison'; // À créer
+import Catalogue from './pages/Catalogue/Catalogue';
+import Comparison from './pages/Comparison/Comparison'; 
 import { colors } from './utils/colors';
 
 // Création du thème Material UI
@@ -62,8 +62,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/catalogue" element={<Catalogue />} /> */}
-          {/* <Route path="/comparison" element={<Comparison />} /> */}
+          { <Route path="/catalogue" element={<Catalogue />} /> }
+          { <Route path="/comparison" element={<Comparison />} /> }
         </Routes>
         <Footer />
       </Router>

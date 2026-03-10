@@ -46,7 +46,7 @@ function Footer() {
         <Grid container spacing={4} alignItems="flex-start">
 
         {/* Colonne gauche */}
-        <Grid item xs={12} md={4}>
+        <Grid size={{xs:12, md: 4}}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
             <DirectionsCarIcon sx={{ color: colors.primary, fontSize: 32 }} />
             <Typography variant="h6" sx={{ fontWeight: 700, ml: 1, color: colors.textPrimary }}>
@@ -65,29 +65,11 @@ function Footer() {
             <SocialIcon size="small"><InstagramIcon fontSize="small" /></SocialIcon>
             <SocialIcon size="small"><GitHubIcon fontSize="small" /></SocialIcon>
             </Box>
-        </Grid>
-        <Grid item xs={6} md={3}>
-                <Typography variant="subtitle1" sx={{ fontWeight: 600, color: colors.textPrimary, mb: 2 }}>
-                
-                </Typography>
-                <FooterLink href="/"></FooterLink>
-                <FooterLink href="/catalogue"></FooterLink>
-                <FooterLink href="/comparaison"></FooterLink>
-                <FooterLink href="/faq"></FooterLink>
-        </Grid>
-        <Grid item xs={6} md={3}>
-                <Typography variant="subtitle1" sx={{ fontWeight: 600, color: colors.textPrimary, mb: 2 }}>
-                
-                </Typography>
-                <FooterLink href="/"></FooterLink>
-                <FooterLink href="/catalogue"></FooterLink>
-                <FooterLink href="/comparaison"></FooterLink>
-                <FooterLink href="/faq"></FooterLink>
-        </Grid>        
+        </Grid>       
 
 
         {/* Colonnes droites regroupées */}
-        <Grid item xs={12} md={8}>
+        <Grid size={{xs: 12, md: 8}}>
             <Grid
             container
             spacing={4}
@@ -96,7 +78,7 @@ function Footer() {
             >
 
             {/* Navigation */}
-            <Grid item xs={6} md={3}>
+            <Grid size={{xs: 6, md: 3}}>
                 <Typography variant="subtitle1" sx={{ fontWeight: 600, color: colors.textPrimary, mb: 2 }}>
                 Navigation
                 </Typography>
@@ -107,7 +89,7 @@ function Footer() {
             </Grid>
 
             {/* Légal */}
-            <Grid item xs={6} md={3}>
+            <Grid size={{xs: 6, md: 3}}>
                 <Typography variant="subtitle1" sx={{ fontWeight: 600, color: colors.textPrimary, mb: 2 }}>
                 Légal
                 </Typography>
@@ -118,7 +100,7 @@ function Footer() {
             </Grid>
 
             {/* Contact */}
-            <Grid item xs={12} md={4}>
+            <Grid size={{xs: 12, md: 4}}>
                 <Typography variant="subtitle1" sx={{ fontWeight: 600, color: colors.textPrimary, mb: 2 }}>
                 Contact
                 </Typography>
