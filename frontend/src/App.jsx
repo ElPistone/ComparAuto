@@ -1,35 +1,74 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// frontend/src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import Home from './pages/Home/Home';
+//import Catalogue from './pages/Catalogue/Catalogue'; // À créer
+//import Comparison from './pages/Comparison/Comparison'; // À créer
+import { colors } from './utils/colors';
+
+// Création du thème Material UI
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: colors.primary,
+    },
+    secondary: {
+      main: colors.secondary,
+    },
+    text: {
+      primary: colors.textPrimary,
+      secondary: colors.textSecondary,
+    },
+    background: {
+      default: colors.background,
+      paper: colors.cardBg,
+    },
+  },
+  typography: {
+    fontFamily: '"Poppins", "Inter", "Helvetica", "Arial", sans-serif',
+    h1: {
+      fontFamily: 'Poppins, sans-serif',
+      fontWeight: 700,
+    },
+    h2: {
+      fontFamily: 'Poppins, sans-serif',
+      fontWeight: 600,
+    },
+    h3: {
+      fontFamily: 'Poppins, sans-serif',
+      fontWeight: 600,
+    },
+    body1: {
+      fontFamily: 'Inter, sans-serif',
+    },
+    body2: {
+      fontFamily: 'Inter, sans-serif',
+    },
+  },
+  shape: {
+    borderRadius: 8,
+  },
+});
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/catalogue" element={<Catalogue />} /> */}
+          {/* <Route path="/comparison" element={<Comparison />} /> */}
+        </Routes>
+        <Footer />
+      </Router>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
