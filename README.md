@@ -135,17 +135,6 @@ afin d’offrir **une expérience utilisateur optimisée pour chaque profil**.
 
 ## 1️⃣ Cloner le dépôt
 
-```bash
-git clone https://github.com/ELPistone/ComparAuto.git
-cd ComparAuto ```
-
-
-
-
-
-
-
-
-
-
-
+- ```bash
+git clone https://github.com/ELPistone/ComparAuto.git ```
+```cd ComparAuto```
